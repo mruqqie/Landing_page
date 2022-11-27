@@ -1,4 +1,4 @@
-# Landing Page Project
+# Landing Page
 
 ## Table of Contents
 

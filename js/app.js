@@ -30,13 +30,6 @@ const nav = document.getElementById('navbar__list');
  * Start Helper Functions
  * 
 */
-nav.addEventListener("click", (event) => {
-    event.preventDefault()
-    const section = document.getElementById(event.target.id.replaceAll("_", ""));
-    console.log(event)
-    section.scrollIntoView({behaviour: "smooth"});
-})
-
 function inViewPort(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -72,12 +65,6 @@ function navList() {
     });
 
 }
-navList();
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
 
 /**
  * End Main Functions
@@ -86,8 +73,15 @@ navList();
 */
 
 // Build menu 
+navList();
 
 // Scroll to section on link click
+nav.addEventListener("click", (e) => {
+    e.preventDefault()
+    const id = e.target.id.replaceAll("_", "");
+    const section = document.getElementById(id);
+    section.scrollIntoView({behaviour: "smooth"});
+})
 
 
 // Set sections as active
