@@ -211,8 +211,7 @@ section.active .landing__container::after {
 }
 
 .active__sec {
-    background: #333;
-    color: #fff;
+    background: rgb(89, 131, 179);
 }
 
 

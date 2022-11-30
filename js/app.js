@@ -40,6 +40,7 @@ function navList() {
         a.setAttribute('class', 'menu__link');
         a.appendChild(content);
         li.appendChild(a);
+        nav.append(li);   
     });
 
 }
@@ -59,7 +60,7 @@ nav.addEventListener("click", (e) => {
     const id = e.target.id.replaceAll("_", "");
     const section = document.getElementById(id);
     section.scrollIntoView({behavior:'smooth'});
-    const navLi = document.querySelectorAll('#navbar__list a')
+    const navLi = document.querySelectorAll('#navbar__list li a')
     navLi.forEach(element => {
         if (element.id === `${id}_`) {
             document.querySelector(`#${element.id}`).classList.add("active__sec");
@@ -77,5 +78,3 @@ document.addEventListener("scroll", () => {
         section.classList.remove("active");
     });
 })
-
-
