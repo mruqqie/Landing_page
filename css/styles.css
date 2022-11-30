@@ -10,9 +10,7 @@
 
 
 /* ---- Base Rules ---- */
-html {
-    scroll-behavior: smooth;
-}
+
 
 body {
     background: rgb(136,203,171);
@@ -211,6 +209,12 @@ section.active .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
+
+.active__sec {
+    background: #333;
+    color: #fff;
+}
+
 
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
