@@ -13,7 +13,7 @@ const nav = document.getElementById('navbar__list');
 function inViewPort(element) {
     const rect = element.getBoundingClientRect();
     return (
-        // rect.top >= 0 &&
+        rect.top >= 0 &&
         rect.left >= 0 &&
         // In case the browser does not support .innerHeight, 
         // it falls back to the older document.documentElement.clientheight
@@ -60,7 +60,7 @@ nav.addEventListener("click", (e) => {
     e.preventDefault()
     const id = e.target.id.replaceAll("_", "");
     const section = document.getElementById(id);
-    section.scrollIntoView({behaviour: "smooth"});
+    section.scrollIntoView();
 })
 
 
