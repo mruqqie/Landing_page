@@ -60,21 +60,24 @@ nav.addEventListener("click", (e) => {
     const id = e.target.id.replaceAll("_", "");
     const section = document.getElementById(id);
     section.scrollIntoView({behavior:'smooth'});
-    const navLi = document.querySelectorAll('#navbar__list li a')
-    navLi.forEach(element => {
-        if (element.id === `${id}_`) {
-            document.querySelector(`#${element.id}`).classList.add("active__sec");
-        } else {
-            document.querySelector(`#${element.id}`).classList.remove("active__sec");
-        }
-    });
 })
 
 
 // Set sections as active
 document.addEventListener("scroll", () => {
     navBarList.forEach((section) => {
-        inViewPort(section) ? section.classList.add("active") :
-        section.classList.remove("active");
+        if (inViewPort(section)) {
+            section.classList.add("active")
+            const navLi = document.querySelectorAll('#navbar__list li a')
+            navLi.forEach(element => {
+                if (element.id === `${section.id}_`) {
+                    document.querySelector(`#${element.id}`).classList.add("active__sec");
+                } else {
+                    document.querySelector(`#${element.id}`).classList.remove("active__sec");
+                }
+            });
+        } else {
+                   section.classList.remove("active");
+        }
     });
 })
